@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Apply Job</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#f4f6f8;
+}
+
+.container{
+    width:400px;
+    margin:auto;
+    margin-top:50px;
+    background:white;
+    padding:30px;
+    border-radius:8px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+input{
+    width:100%;
+    padding:8px;
+    margin:8px 0;
+}
+
+button{
+    background:#28a745;
+    color:white;
+    border:none;
+    padding:10px;
+    width:100%;
+    border-radius:5px;
+}
+
+button:hover{
+    background:#1e7e34;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Apply for {{ job.title }}</h2>
+
+<form method="post" enctype="multipart/form-data">
+
+{% csrf_token %}
+
+<label>Name</label>
+<input type="text" name="name">
+
+<label>Email</label>
+<input type="email" name="email">
+
+<label>Resume</label>
+<input type="file" name="resume">
+
+<button type="submit">Submit Application</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
